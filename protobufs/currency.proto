@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package currency;
+
+option go_package = "github.com/manujelko/go-grpc-microservices/pkg/protobufs/currency";
+
+service Currency {
+    rpc GetRate(GetRateRequest) returns (GetRateResponse) {}
+}
+
+message GetRateRequest {
+    string Base = 1;
+    string Destination = 2;
+}
+
+message GetRateResponse {
+    float Rate = 1;
+}
